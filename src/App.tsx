@@ -1,21 +1,28 @@
-import './App.css'
 import { Routes, Route, Navigate } from "react-router-dom";
+import AuthPage from "./components/AuthPage";
 import Messages from "./components/Messages";
-import CreateAccount from "./components/CreateAccount";
 
 function App() {
-  const account = localStorage.getItem("account");
+  const token = localStorage.getItem("token");
 
   return (
     <Routes>
-      {/* No account → force to "/" */}
-      {!account && <Route path="*" element={<Navigate to="/" />} />}
+      {/* Public route */}
+      <Route path="/" element={<AuthPage />} />
 
-      {/* Create account page */}
-      <Route path="/" element={<CreateAccount />} />
+      {/* Protected route */}
+      <Route
+        path="/messages"
+        element={
+          token ? <Messages /> : <Navigate to="/" replace />
+        }
+      />
 
-      {/* Messages page */}
-      <Route path="/messages" element={<Messages />} />
+      {/* Default redirect */}
+      <Route
+        path="*"
+        element={<Navigate to={token ? "/messages" : "/"} replace />}
+      />
     </Routes>
   );
 }
