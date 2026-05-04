@@ -1,6 +1,9 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import AuthPage from "./components/AuthPage";
 import Messages from "./components/Messages";
+import ShowcasePage from "./components/ShowcasePage/ShowcasePage";
+import "./styles/typography.css";
+import "./styles/theme.css";
 
 function App() {
   const token = localStorage.getItem("token");
@@ -15,6 +18,12 @@ function App() {
         path="/messages"
         element={
           token ? <Messages /> : <Navigate to="/" replace />
+        }
+      />
+      <Route
+        path="/showcase"
+        element={
+          <ShowcasePage></ShowcasePage>
         }
       />
 

@@ -1,0 +1,26 @@
+/* src/styles/theme.css */
+
+:root {
+  /* Primary UI colors */
+  --color-primary: #2a1f33;
+  --color-primary-dark: #2a1f33;
+
+  --color-secondary: #412e4e;
+  --color-secondary-dark: #412e4e;
+
+  --color-highlight: #f59e0b;
+
+  /* states */
+  --color-disabled: #777;
+  --color-decline: #e40058;
+  --collor-accept: #00ff6d;
+
+  /* backgrounds */
+  --color-bg-main: #1a1322;
+  --color-bg-panel: #1a1322;
+
+  /*text */
+  --color-text: #f1eaff;
+  --color-text-muted: #cbb6e6;
+
+}

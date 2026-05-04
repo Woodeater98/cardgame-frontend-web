@@ -1,0 +1,18 @@
+.sprite-button {
+  border: none;
+  padding: 0;
+
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  cursor: pointer;
+}
+
+.sprite-button:disabled {
+  cursor: not-allowed;
+}
